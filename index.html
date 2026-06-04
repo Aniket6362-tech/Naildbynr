@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nail'd By NR | Handcrafted Premium Custom Press-On Nails</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        aesthetic: {
+                            cream: '#FFFDFB',    
+                            nude: '#FAF2EE',     
+                            blush: '#F5E4DC',    
+                            rose: '#D69E8C',     
+                            espresso: '#4A342E', 
+                            accent: '#F2D3C4'    
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['DM Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .custom-glass {
+            background: rgba(255, 253, 251, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(214, 158, 140, 0.15);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #FFFDFB; }
+        ::-webkit-scrollbar-thumb { background: #D69E8C; border-radius: 3px; }
+        @keyframes drift {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(3deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .animate-soft { animation: drift 7s ease-in-out infinite; }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-aesthetic-cream text-aesthetic-espresso font-sans antialiased overflow-x-hidden selection:bg-aesthetic-blush selection:text-aesthetic-espresso">
+
+    <!-- Decorative Soft Organic Petal Backdrop Accents -->
+    <div class="absolute top-[15%] right-[8%] w-16 h-16 opacity-20 pointer-events-none animate-soft">
+        <svg viewBox="0 0 100 100" fill="#D69E8C" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 0 C70 30, 80 60, 50 100 C20 60, 30 30, 50 0" />
+        </svg>
+    </div>
+    <div class="absolute top-[50%] left-[4%] w-12 h-12 opacity-15 pointer-events-none animate-soft" style="animation-delay: 2s;">
+        <svg viewBox="0 0 100 100" fill="#F5E4DC" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 0 C70 35, 75 70, 50 100 C25 70, 30 35, 50 0" />
+        </svg>
+    </div>
+
+    <!-- Top Delicate Announcement Bar -->
+    <div id="announcement-bar" class="bg-aesthetic-nude text-[11px] tracking-[0.2em] py-2.5 text-center text-aesthetic-rose uppercase font-semibold border-b border-aesthetic-blush/30 px-4">
+        Premium Handmade Press-On Nails • Order Directly via WhatsApp
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 custom-glass border-b border-aesthetic-blush/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div id="logo-trigger" class="flex items-center gap-2.5 cursor-pointer select-none" title="Nail'd By NR">
+                <span class="text-aesthetic-rose"><i data-lucide="sparkles" class="w-5 h-5"></i></span>
+                <span class="font-serif text-xl sm:text-2xl tracking-[0.12em] font-bold bg-gradient-to-r from-aesthetic-espresso via-aesthetic-rose to-aesthetic-rose bg-clip-text text-transparent">
+                    NAIL'D BY NR
+                </span>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-8 text-[11px] tracking-widest uppercase font-semibold">
+                <a href="#about" class="text-aesthetic-espresso/80 hover:text-aesthetic-rose transition-colors">Our Brand</a>
+                <a href="#gallery" class="text-aesthetic-espresso/80 hover:text-aesthetic-rose transition-colors font-bold">Designs Lookbook</a>
+                <a href="#ordering" class="text-aesthetic-espresso/80 hover:text-aesthetic-rose transition-colors">How To Order</a>
+            </nav>
+
+            <div class="flex items-center gap-2 sm:gap-3">
+                <button id="dev-mode-btn" onclick="toggleDeveloperPortal()" class="hidden text-aesthetic-rose/60 hover:text-aesthetic-rose p-2 rounded-xl hover:bg-aesthetic-nude transition flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider" title="Manage Designs">
+                    <i data-lucide="settings" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">Admin</span>
+                </button>
+                <a href="#" id="header-whatsapp-btn" target="_blank" class="bg-gradient-to-r from-aesthetic-rose to-aesthetic-blush hover:shadow-sm text-aesthetic-espresso font-bold tracking-wider text-[10px] sm:text-xs uppercase px-4 sm:px-5 py-2 sm:py-2.5 rounded-full flex items-center gap-2 transition duration-200 border border-aesthetic-blush/30">
+                    <i data-lucide="message-circle" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-aesthetic-espresso"></i> <span class="hidden sm:inline">WhatsApp</span><span class="sm:hidden">Chat</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Password Modal for Security -->
+    <div id="password-portal-modal" class="fixed inset-0 bg-aesthetic-espresso/40 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden animate-fade-in">
+        <div class="custom-glass max-w-sm w-full p-8 rounded-3xl border border-aesthetic-blush shadow-2xl space-y-6 text-center">
+            <div class="space-y-2">
+                <span class="text-aesthetic-rose flex justify-center"><i data-lucide="lock" class="w-8 h-8"></i></span>
+                <h3 class="font-serif text-2xl text-aesthetic-espresso">Admin Verification</h3>
+                <p class="text-[10px] text-gray-500 uppercase tracking-widest">Enter security password</p>
+            </div>
+            <div class="space-y-4">
+                <input type="password" id="admin-password-input" placeholder="Enter password..." class="w-full text-center bg-aesthetic-cream border border-aesthetic-blush focus:border-aesthetic-rose rounded-xl px-4 py-3 text-sm text-aesthetic-espresso outline-none transition font-sans">
+                <p id="password-error-msg" class="text-[11px] text-red-500 hidden font-semibold">Incorrect password! Try again.</p>
+            </div>
+            <div class="flex gap-3 pt-2">
+                <button type="button" onclick="closePasswordPortal()" class="flex-1 py-3 bg-aesthetic-cream hover:bg-aesthetic-nude border border-aesthetic-blush/40 text-xs font-semibold uppercase tracking-wider rounded-xl transition">Cancel</button>
+                <button type="button" onclick="verifyAdminPassword()" class="flex-1 py-3 bg-gradient-to-r from-aesthetic-rose to-aesthetic-blush text-aesthetic-espresso font-bold text-xs uppercase tracking-wider rounded-xl transition shadow">Verify</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Developer/Owner Setup Modal (Dashboard) -->
+    <div id="developer-portal-modal" class="fixed inset-0 bg-aesthetic-espresso/40 backdrop-blur-sm z-[100] flex items-center justify-center p-2 sm:p-4 hidden animate-fade-in">
+        <div class="custom-glass max-w-2xl w-full p-5 sm:p-8 rounded-3xl border border-aesthetic-blush shadow-2xl flex flex-col max-h-[95vh]">
+            <div class="text-center space-y-1 mb-6 flex-shrink-0">
+                <h3 class="font-serif text-2xl text-aesthetic-espresso">Owner Dashboard</h3>
+                <p class="text-xs text-gray-500 uppercase tracking-widest">Manage your global settings & designs</p>
+            </div>
+            <div class="overflow-y-auto flex-grow space-y-6 pr-2 scrollbar-thin">
+                <div class="bg-aesthetic-nude/50 p-5 rounded-2xl border border-aesthetic-blush space-y-4">
+                    <p class="text-aesthetic-rose font-bold text-xs uppercase tracking-wider mb-2">Global Settings Update (Demo)</p>
+                    <button type="button" onclick="toggleDeveloperPortal()" class="w-full bg-aesthetic-espresso text-aesthetic-cream px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-aesthetic-rose transition shadow-md">Close Admin Panel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="relative">
+        <!-- Hero Section -->
+        <section class="relative min-h-[75vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 overflow-hidden">
+            <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center relative z-10">
+                
+                <!-- Left Details -->
+                <div class="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-aesthetic-blush text-aesthetic-rose px-3 sm:px-4 py-1.5 rounded-full text-[10px] sm:text-xs tracking-[0.15em] uppercase font-bold border border-aesthetic-blush/30 shadow-sm">
+                        ✨ Handcrafted Custom Press-On Nails
+                    </div>
+                    
+                    <h1 class="font-serif text-4xl sm:text-6xl lg:text-8xl font-normal leading-none tracking-tight text-aesthetic-espresso">
+                        Bespoke <br>
+                        <span class="italic font-light text-aesthetic-rose">Aesthetic</span> <br>
+                        Creations.
+                    </h1>
+                    
+                    <p class="text-gray-500 text-sm sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        Welcome to Nail'd By NR. Every single set of press-on nails is carefully custom-designed and hand-painted by lead artist NR. Our custom luxury nails offer a salon-grade manicure in minutes, directly delivered to your door.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#gallery" class="w-full sm:w-auto px-8 py-3.5 bg-aesthetic-espresso text-aesthetic-cream rounded-full text-xs font-bold uppercase tracking-widest hover:bg-aesthetic-rose transition-colors text-center shadow-lg">
+                            View Lookbook
+                        </a>
+                        <a href="#ordering" class="w-full sm:w-auto px-8 py-3.5 bg-transparent border border-aesthetic-rose text-aesthetic-espresso rounded-full text-xs font-bold uppercase tracking-widest hover:bg-aesthetic-nude transition-colors text-center">
+                            How To Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="lg:col-span-5 relative hidden lg:block">
+                    <div class="w-full h-[500px] rounded-[3rem] bg-aesthetic-nude border-2 border-aesthetic-blush/50 overflow-hidden relative shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1000&auto=format&fit=crop" alt="Premium Nails" class="w-full h-full object-cover opacity-90 hover:opacity-100 transition duration-500">
+                    </div>
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -left-6 custom-glass p-4 rounded-2xl shadow-lg flex items-center gap-3">
+                        <div class="bg-aesthetic-rose p-3 rounded-full text-white">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-wider text-aesthetic-espresso">Premium Quality</p>
+                            <p class="text-[10px] text-gray-500">Reusable & Durable</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-aesthetic-nude py-8 border-t border-aesthetic-blush/30 text-center">
+            <p class="font-serif text-lg text-aesthetic-espresso font-bold mb-2">NAIL'D BY NR</p>
+            <p class="text-xs text-gray-500 uppercase tracking-widest">&copy; 2026 All Rights Reserved.</p>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Admin Portal Logic
+        let clickCount = 0;
+        let clickTimer = null;
+        
+        document.getElementById('logo-trigger').addEventListener('click', () => {
+            clickCount++;
+            if (clickCount === 1) {
+                clickTimer = setTimeout(() => { clickCount = 0; }, 2000);
+            }
+            if (clickCount === 5) {
+                document.getElementById('password-portal-modal').classList.remove('hidden');
+                clearTimeout(clickTimer);
+                clickCount = 0;
+            }
+        });
+
+        function closePasswordPortal() {
+            document.getElementById('password-portal-modal').classList.add('hidden');
+            document.getElementById('admin-password-input').value = '';
+            document.getElementById('password-error-msg').classList.add('hidden');
+        }
+
+        function verifyAdminPassword() {
+            const pwd = document.getElementById('admin-password-input').value;
+            // Demo Password
+            if (pwd === "admin123") {
+                closePasswordPortal();
+                document.getElementById('dev-mode-btn').classList.remove('hidden');
+                toggleDeveloperPortal();
+            } else {
+                document.getElementById('password-error-msg').classList.remove('hidden');
+            }
+        }
+
+        function toggleDeveloperPortal() {
+            const modal = document.getElementById('developer-portal-modal');
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
